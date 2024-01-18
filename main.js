@@ -55,15 +55,16 @@ document.getElementById('start').addEventListener("click", function () {
                 this.classList.add("bomb")
                 alert(`Hai trovato una bomba! Hai totalizzato ${punteggio} punti.`)
                 
-                document.getElementById('grid').outerHTML = document.getElementById('grid').outerHTML
+                grigliaHtml.style.setProperty("pointer-events", "none")
 
             } else {
                 this.classList.add("active")
+                this.style.setProperty("pointer-events", "none")
                 punteggio++
                 if (punteggio == (difficulty-16)){
                     alert(`Complimenti, hai vinto! Hai totalizzato ${punteggio} punti.`)
                 
-                    document.getElementById('grid').outerHTML = document.getElementById('grid').outerHTML
+                    grigliaHtml.style.setProperty("pointer-events", "none")
                 }
             } 
         })
